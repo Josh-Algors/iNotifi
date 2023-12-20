@@ -1,0 +1,23 @@
+[22-Aug-2020 19:36:35 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home/iTransdata/public_html/login/login.php on line 64
+[23-Aug-2020 11:31:23 UTC] PHP Parse error:  syntax error, unexpected 'header' (T_STRING) in /home/iTransdata/public_html/login/login.php on line 62
+[23-Aug-2020 11:31:38 UTC] PHP Parse error:  syntax error, unexpected 'header' (T_STRING) in /home/iTransdata/public_html/login/login.php on line 62
+[23-Aug-2020 11:31:55 UTC] PHP Parse error:  syntax error, unexpected 'header' (T_STRING) in /home/iTransdata/public_html/login/login.php on line 62
+[23-Aug-2020 11:32:10 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home/iTransdata/public_html/login/login.php on line 64
+[03-Sep-2020 10:51:02 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home/iTransdata/public_html/login/login.php on line 64
+[07-Oct-2020 07:11:17 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home/iTransdata/public_html/login/login.php on line 64
+[10-Oct-2020 08:23:11 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home/iTransdata/public_html/login/login.php on line 64
+[10-Oct-2020 08:26:48 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home/iTransdata/public_html/login/login.php on line 64
+[10-Oct-2020 17:27:04 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home/iTransdata/public_html/login/login.php on line 64
+[10-Oct-2020 18:01:39 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home/iTransdata/public_html/login/login.php on line 64
+[13-Oct-2020 21:49:19 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home/iTransdata/public_html/login/login.php on line 64
+[17-Oct-2020 10:32:29 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home/iTransdata/public_html/login/login.php on line 64
+[15-Nov-2020 19:27:38 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home/iTransdata/public_html/login/login.php on line 64
+[18-Mar-2021 20:07:26 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home/iTransdata/public_html/login/login.php on line 64
+[18-Mar-2021 20:08:39 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home/iTransdata/public_html/login/login.php on line 64
+[18-Mar-2021 20:10:35 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home/iTransdata/public_html/login/login.php on line 64
+[18-Mar-2021 22:22:56 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home/iTransdata/public_html/login/login.php on line 64
+[19-Mar-2021 05:25:51 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home/iTransdata/public_html/login/login.php on line 64
+[21-Mar-2021 06:53:21 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home/iTransdata/public_html/login/login.php on line 64
+[23-Mar-2021 18:00:28 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home/iTransdata/public_html/login/login.php on line 64
+[23-Mar-2021 18:33:54 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home/iTransdata/public_html/login/login.php on line 64
+[26-Mar-2021 07:18:49 UTC] PHP Warning:  mysqli_close() expects parameter 1 to be mysqli, null given in /home/iTransdata/public_html/login/login.php on line 64
