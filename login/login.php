@@ -6,7 +6,7 @@ if(isset($_POST["btnlogin"]))
 {
     
     
-    $conn=mysqli_connect('localhost','root','','iNotify') or die('Could not Connect My Sql:'.mysql_error());
+    $conn=mysqli_connect('localhost','root','','iNotifi') or die('Could not Connect My Sql:'.mysql_error());
     $fs = mysqli_query($conn,"select * from admin where email='$email'");
     $ss = mysqli_query($conn,"select * from admin where username='$email'");
     if(empty($row[(mysqli_fetch_array($ss))])){
@@ -64,7 +64,7 @@ mysqli_close($conn);
     <meta name="naver-site-verification" content="">
 
 
-    <title> iNotify </title>
+    <title> iNotifi </title>
 
     <link rel="icon" type="image/jpg" href="../yaba.png">
 

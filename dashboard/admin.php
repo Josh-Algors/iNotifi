@@ -1,9 +1,28 @@
 <?php   
 session_start();  
-require __DIR__ . '\vendor\autoload.php';
+require '../vendor/autoload.php';
 use Twilio\Rest\Client;
+use Endroid\QrCode\QrCode;
 
-$conn=mysqli_connect('localhost','root','','iNotify') or die('Could not Connect My Sql:'.mysql_error());
+// Function to generate a unique QR code for a given data
+function generateQRCode($data)
+{
+    $qrCode = new QrCode($data);
+    $qrCode->setSize(300); // Set the size of the QR code image (e.g., 300 pixels)
+
+    return $qrCode->writeString();
+}
+
+// Example of how to use the function
+$qrCodeImage = generateQRCode("tuig99999");
+
+// Display the image (you might want to save it or embed it in an HTML page)
+header("Content-Type: image/png");
+echo $qrCodeImage;
+
+
+
+$conn=mysqli_connect('localhost','root','','iNotifi') or die('Could not Connect My Sql:'.mysql_error());
 if(!isset($_SESSION["admin"])){  
     header("location:../login/index.htm");  
 }if(isset($_SESSION["login"]) && (!isset($_SESSION["admin"]))){  
@@ -15,6 +34,8 @@ if(isset($_SESSION["login"]) && (isset($_SESSION["admin"]))){
 if(isset($_SESSION["admin"]) && !isset($_SESSION["login"])) {  
 
 $_SESSION["registered"]="admin";
+
+echo generateQRCode();
 if(isset($_POST['sendnote'])){
   $dept = $_POST['dept'];
   $lev = $_POST['lev'];
@@ -48,7 +69,7 @@ if(isset($_POST['sendnote'])){
       $to = $rowmail['email'];
       $sub = "Examination Info for " .$_POST['course'];
       $message = $examdetails;
-      $from = "From: inotify6@gmail.com";
+      $from = "From: iNotifi6@gmail.com";
       mail($to,$sub,$message,$from);
           
       // Your Account SID and Auth Token from twilio.com/console
@@ -88,7 +109,7 @@ if(isset($_POST['sendmessage'])){
       $to = $rowval['email'];
       $sub = "Important Notice!!";
       $message = $message;
-      $from = "From: inotify6@gmail.com";
+      $from = "From: iNotifi6@gmail.com";
       mail($to,$sub,$message,$from);
           
       // Your Account SID and Auth Token from twilio.com/console
@@ -144,7 +165,7 @@ if(isset($_POST['sendmessage'])){
     <meta name="naver-site-verification" content="">
 
 
-    <title> iNotify </title>
+    <title> iNotifi </title>
 
     <link rel="icon" type="image/jpg" href="../yaba.png">
 
@@ -291,6 +312,6 @@ if(isset($_POST['sendmessage'])){
 </body>
 </html>
 <?php
-$conn=mysqli_connect('localhost','root','','iNotify') or die('Could not Connect My Sql:'.mysql_error());
+$conn=mysqli_connect('localhost','root','','iNotifi') or die('Could not Connect My Sql:'.mysql_error());
 mysqli_close($conn);}
 ?>

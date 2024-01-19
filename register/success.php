@@ -18,7 +18,7 @@ if(isset($_SESSION['login'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="robots" content="index, follow">
-    <meta name="description" content="iNotify.">
+    <meta name="description" content="iNotifi.">
     <meta name="keywords" content="">
 
 
@@ -26,7 +26,7 @@ if(isset($_SESSION['login'])){
     <meta name="naver-site-verification" content="">
 
 
-    <title> iNotify </title>
+    <title> iNotifi </title>
 
     <link rel="icon" type="image/jpg" href="../yaba.png">
 

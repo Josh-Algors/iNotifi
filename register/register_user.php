@@ -6,7 +6,7 @@ if(empty($_POST['email'])) {
 }
 
 if(!empty($_POST['email'])) {
-$conn=mysqli_connect('localhost','root','','inotify') or die('Could not Connect My Sql:'.mysql_error());
+$conn=mysqli_connect('localhost','root','','iNotifi') or die('Could not Connect My Sql:'.mysql_error());
 $rs=mysqli_query($conn,"select * from student WHERE `matric no`='$matnum'");
 $qs =mysqli_query($conn,"select * from student WHERE `phone`='$phone'");
 
@@ -29,7 +29,7 @@ if (mysqli_num_rows($rs)>0 || mysqli_num_rows($qs)>0)
     <meta name="naver-site-verification" content="">
 
 
-    <title> iNotify </title>
+    <title> iNotifi </title>
 
     <link rel="icon" type="image/jpg" href="../yaba.png">
 

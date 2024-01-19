@@ -1,0 +1,29 @@
+{
+    "name": "vendor/composer",
+    "require": {
+        "php": "^8.0.0",
+        "composer": "2.4.4",
+        "evenement/evenement": "^3.0",
+        "guzzlehttp/psr7": "^2.6",
+        "jaggedsoft/php-binance-api": "^0.5.28",
+        "psr/http-message": "^2.0",
+        "ralouphie/getallheaders": "^3.0",
+        "ratchet/pawl": "^0.3.0",
+        "ratchet/rfc6455": "^0.3.1",
+        "twilio/sdk": "^7.13",
+        "bacon/bacon-qr-code": "^2.0",
+        "simplesoftwareio/simple-qrcode": "^4.2",
+        "endroid/qr-code": "^4.8"
+    },
+    "authors": [
+        {
+            "name": "JoshDev",
+            "email": "olukoyajoshua72@gmail.com"
+        }
+    ],
+    "config": {
+        "platform": {
+            "php": "8.0.0"
+        }
+    }
+}

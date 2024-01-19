@@ -1,6 +1,6 @@
 <?php   
 session_start();  
-$conn=mysqli_connect('localhost','root','','iNotify') or die('Could not Connect My Sql:'.mysql_error());
+$conn=mysqli_connect('localhost','root','','iNotifi') or die('Could not Connect My Sql:'.mysql_error());
 if(!isset($_SESSION["registered"])){  
     header("location:../login/index.htm");  
 } else {  
