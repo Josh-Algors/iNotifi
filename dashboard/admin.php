@@ -185,9 +185,19 @@ if (isset($_POST['sendnote'])) {
     file_put_contents($svgFilename, $decodedData);
 
     // Use Inkscape to convert SVG to PNG
-    $svgPath = "/opt/homebrew/bin/inkscape";
-    $command = $svgPath . ' --export-type=png --export-filename=' . $pngFilename . ' ' . $svgFilename;
-    exec($command, $output, $returnCode);
+    if($_SERVER['APP_ENV'] == 'local')
+    {
+      $svgPath = "/opt/homebrew/bin/inkscape";
+      $command = $svgPath . ' --export-type=png --export-filename=' . $pngFilename . ' ' . $svgFilename;
+      exec($command, $output, $returnCode);
+    }
+    else
+    {
+      $svgPath = "/usr/bin/inkscape";
+      $command = $svgPath . ' --export-type=png --export-filename=' . $pngFilename . ' ' . $svgFilename;
+      exec($command, $output, $returnCode);
+    }
+    
 
 
 
