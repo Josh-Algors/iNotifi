@@ -178,8 +178,8 @@ if (isset($_POST['sendnote'])) {
     // Specify the full path to the root folder and generate a unique filename with the correct extension
     $rootFolder = "../"; // Assuming this script is in the root folder
     $uniqueFileName = generateRandomString();
-    $svgFilename = $rootFolder . '/input_image_' . $uniqueFileName. '.svg';
-    $pngFilename = $rootFolder . '/output_image_' . $uniqueFileName . '.png';
+    $svgFilename = $rootFolder . 'input_image_' . $uniqueFileName. '.svg';
+    $pngFilename = $rootFolder . 'output_image_' . $uniqueFileName . '.png';
 
     // Save the decoded SVG data to a file
     file_put_contents($svgFilename, $decodedData);
