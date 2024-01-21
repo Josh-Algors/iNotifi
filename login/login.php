@@ -5,14 +5,10 @@ $dotenv->load();
 
 if($_SERVER['APP_ENV'] == 'local')
 {
-    echo "local";
-    exit;
   $conn=mysqli_connect('localhost','root','','iNotifi') or die('Could not Connect My Sql:'.mysql_error());
 }
 else
 {
-    echo "live";
-    exit;
   $conn=mysqli_connect('localhost','root',$_SERVER['DB_LIVE_PASSWORD'],'iNotifi') or die('Could not Connect My Sql:'.mysql_error());
 }
 extract($_POST);
