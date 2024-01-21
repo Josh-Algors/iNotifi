@@ -194,7 +194,7 @@ if (isset($_POST['sendnote'])) {
     else
     {
       $svgPath = "/usr/bin/inkscape";
-      $command = $svgPath . ' --export-type=png --export-filename=' . $pngFilename . ' ' . $svgFilename;
+      $command = 'sudo ' . $svgPath . ' --export-type=png --export-filename=' . $pngFilename . ' ' . $svgFilename;
       exec($command, $output, $returnCode);
     }
     
