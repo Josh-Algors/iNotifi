@@ -62,7 +62,14 @@ $dotenv->load();
 // echo $uploadResult;
 // exit;
 
-$conn=mysqli_connect('localhost','root','','iNotifi') or die('Could not Connect My Sql:'.mysql_error());
+if($_SERVER['APP_ENV'] == 'local')
+{
+  $conn=mysqli_connect('localhost','root','','iNotifi') or die('Could not Connect My Sql:'.mysql_error());
+}
+else
+{
+  $conn=mysqli_connect('localhost','root',$_SERVER['DB_LIVE_PASSWORD'],'iNotifi') or die('Could not Connect My Sql:'.mysql_error());
+}
 if(!isset($_SESSION["admin"])){  
     header("location:../login/index.htm");  
 }if(isset($_SESSION["login"]) && (!isset($_SESSION["admin"]))){  

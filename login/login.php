@@ -1,12 +1,21 @@
 <?php
+$dotenv = Dotenv\Dotenv::createImmutable("../");
+$dotenv->load();
+
+if($_SERVER['APP_ENV'] == 'local')
+{
+  $conn=mysqli_connect('localhost','root','','iNotifi') or die('Could not Connect My Sql:'.mysql_error());
+}
+else
+{
+  $conn=mysqli_connect('localhost','root',$_SERVER['DB_LIVE_PASSWORD'],'iNotifi') or die('Could not Connect My Sql:'.mysql_error());
+}
 extract($_POST);
 
 
 if(isset($_POST["btnlogin"]))
 {
     
-    
-    $conn=mysqli_connect('localhost','root','','iNotifi') or die('Could not Connect My Sql:'.mysql_error());
     $fs = mysqli_query($conn,"select * from admin where email='$email'");
     $ss = mysqli_query($conn,"select * from admin where username='$email'");
     if(empty($row[(mysqli_fetch_array($ss))])){

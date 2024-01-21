@@ -1,6 +1,16 @@
 <?php   
 session_start();  
-$conn=mysqli_connect('localhost','root','','iNotifi') or die('Could not Connect My Sql:'.mysql_error());
+$dotenv = Dotenv\Dotenv::createImmutable("../");
+$dotenv->load();
+
+if($_SERVER['APP_ENV'] == 'local')
+{
+  $conn=mysqli_connect('localhost','root','','iNotifi') or die('Could not Connect My Sql:'.mysql_error());
+}
+else
+{
+  $conn=mysqli_connect('localhost','root',$_SERVER['DB_LIVE_PASSWORD'],'iNotifi') or die('Could not Connect My Sql:'.mysql_error());
+}
 if(!isset($_SESSION["registered"])){  
     header("location:../login/index.htm");  
 } else {  

@@ -1,7 +1,15 @@
 <?php
+$dotenv = Dotenv\Dotenv::createImmutable("../");
+$dotenv->load();
 
-$conn=mysqli_connect('localhost','root','','iNotifi') or die('Could not Connect My Sql:'.mysql_error());
-
+if($_SERVER['APP_ENV'] == 'local')
+{
+  $conn=mysqli_connect('localhost','root','','iNotifi') or die('Could not Connect My Sql:'.mysql_error());
+}
+else
+{
+  $conn=mysqli_connect('localhost','root',$_SERVER['DB_LIVE_PASSWORD'],'iNotifi') or die('Could not Connect My Sql:'.mysql_error());
+}
 // Function to sanitize and validate input
 // function sanitizeInput($data) {
 //     return htmlspecialchars(strip_tags($data));
