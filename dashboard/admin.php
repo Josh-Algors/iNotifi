@@ -235,9 +235,9 @@ if (isset($_POST['sendnote'])) {
         $message = $examdetails;
         $from = "From: olukoyajoshua72@gmail.com";
 
-        $firstnameQuery = mysqli_query($conn, "SELECT `first name` FROM `student` WHERE `id` = '$student_id'");
+        $firstnameQuery = mysqli_query($conn, "SELECT `firstname` FROM `student` WHERE `id` = '$student_id'");
         $firstnameRow = mysqli_fetch_array($firstnameQuery);
-        $firstname = $firstnameRow['first name'];
+        $firstname = $firstnameRow['firstname'];
 
 
         
