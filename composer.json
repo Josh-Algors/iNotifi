@@ -13,7 +13,12 @@
         "twilio/sdk": "^7.13",
         "bacon/bacon-qr-code": "^2.0",
         "simplesoftwareio/simple-qrcode": "^4.2",
-        "endroid/qr-code": "^4.8"
+        "endroid/qr-code": "^4.8",
+        "chillerlan/php-qrcode": "^5.0",
+        "vlucas/phpdotenv": "^5.6",
+        "cloudinary/cloudinary_php": "^2.12",
+        "phpmailer/phpmailer": "^6.9",
+        "swiftmailer/swiftmailer": "^6.3"
     },
     "authors": [
         {
@@ -22,8 +27,6 @@
         }
     ],
     "config": {
-        "platform": {
-            "php": "8.0.0"
-        }
+        "platform-check": false
     }
 }
