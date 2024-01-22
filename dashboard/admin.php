@@ -256,26 +256,6 @@ if (isset($_POST['sendnote'])) {
         $firstnameRow = mysqli_fetch_array($firstnameQuery);
         $firstname = $firstnameRow['firstname'];
 
-
-        
-        // echo 'Image saved as: ' . $pngFilename;
-        // exit;
-
-        // $rootFolder = "../"; // Assuming this script is in the root folder
-        // $filename = $rootFolder . '/decoded_image_' . uniqid() . '.svg';
-
-        // // Save the decoded data to a file
-        // file_put_contents($filename, $decodedData);
-
-        // // Specify the full path for the converted PNG file
-        // $pngFilename = $rootFolder . '/converted_image_' . uniqid() . '.png';
-
-        // // Use ImageMagick to convert SVG to PNG
-        // exec("convert {$filename} {$pngFilename}");
-
-        // echo 'Image saved as: ' . $pngFilename;
-        // exit;
-
         $transport = new Swift_SmtpTransport('smtp.gmail.com', 465, 'ssl');
         $transport->setUsername('technitedevs@gmail.com');
         $transport->setPassword('eydrnlsiubowrsdh');
@@ -507,7 +487,7 @@ if(isset($_POST['sendmessage'])){
         <div class="col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
                         <h4>Welcome, <?=$_SESSION['admin'];?>!  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;  &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<a href="logout.php">Logout</a></h4>
             <br/>
-                        <span>STUDENT INFO SYSTEM</span>
+                        <span>STUDENT EXAM VENUE ALLOCATION SYSTEM</span>
 
             <form action="" id="UserLoginNowForm" method="post" accept-charset="utf-8">
 	            <div style="display:none;"><input type="hidden" name="_method" value="POST">
@@ -548,13 +528,28 @@ if(isset($_POST['sendmessage'])){
 	            	<input name="duration" class="form-control" placeholder="Exam Duration" type="text" id="duration" required="required">
 	            </div>
 
-                <div class="form-group required">
-                    
-	            	<input name="venue" class="form-control" placeholder="Exam Venue" type="text" id="venue" required="required">
-	            </div>
+              <div class="form-group required">
+              <select name="venue" class="form-control" id="venue" required>
+              <option value="">--Choose Your Department--</option>
+              <option value="Multipurpose Hall">Multipurpose Hall</option>
+              <option value="New Building Room 3">New Building Room 3</option>
+              <option value="New Building Room 4">New Building Room 4</option>
+              <option value="Food Technology Building Room 2A">Food Technology Building Room 2A</option>
+              <option value="Food Technology Building Room 2B">Food Technology Building Room 2B</option>
+              <option value="Microbiology Room 1">Microbiology Room 1</option>
+              <option value="Microbiology Room 2">Microbiology Room 2</option>
+              <option value="Polymer & Textile Room 201">Polymer & Textile Room 201</option>
+              <option value="Polymer & Textile Room 204">Polymer & Textile Room 204</option>
+              <option value="NUSB 015">NUSB 015</option>
+              <option value="NASB 015">NASB 015</option>
+              <option value="NASB 109">NASB 109</option>
+              <option value="NASB 115">NASB 115</option>
+              <option value="NASB 209">NASB 209</option>
+          </select>
+          </div>
               <div class="form-group required">
                     
-                    <input name="seat" class="form-control" placeholder="Hall Size" type="text" id="seat" required="required">
+              <input class="form-control" type="text" name="seat" id="seat" readonly>
                   </div>
                  
                       
@@ -608,6 +603,37 @@ if(isset($_POST['sendmessage'])){
             function enableBtn(){
         document.getElementById("signInButton2").disabled = false;
       }
+
+      $(document).ready(function () {
+        // Attach an event listener to the venue select dropdown
+        $("#venue").change(function () {
+            var selectedVenue = $(this).val();
+
+            // Fetch the corresponding hall size
+            var hallSizes = {
+                'Multipurpose Hall': 100,
+                'New Building Room 3': 128,
+                'New Building Room 4': 120,
+                'Food Technology Building Room 2A': 170,
+                'Food Technology Building Room 2B': 93,
+                'Microbiology Room 1': 104,
+                'Microbiology Room 2': 80,
+                'Polymer & Textile Room 201': 24,
+                'Polymer & Textile Room 204': 100,
+                'NUSB 015': 58,
+                'NASB 015': 80,
+                'NASB 109': 54,
+                'NASB 115': 50,
+                'NASB 209': 62
+                // Add other venue options here
+            };
+            
+            var selectedHallSize = hallSizes[selectedVenue];
+
+            // Update the hall size input field
+            $("#seat").val(selectedHallSize);
+        });
+    });
 
 
     </script>
