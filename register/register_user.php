@@ -1,13 +1,25 @@
 <?php
 extract($_POST);
+require '../vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable("../");
+$dotenv->load();
+
+
 if(empty($_POST['email'])) {  
      
     header("location: ../register/index.htm");  
 }
+if($_SERVER['APP_ENV'] == 'local')
+{
+  $conn=mysqli_connect('localhost','root','','iNotifi') or die('Could not Connect My Sql:'.mysql_error());
+}
+else
+{
+  $conn=mysqli_connect('localhost','root',$_SERVER['DB_LIVE_PASSWORD'],'iNotifi') or die('Could not Connect My Sql:'.mysql_error());
+}
 
 if(!empty($_POST['email'])) {
-$conn=mysqli_connect('localhost','root','','iNotifi') or die('Could not Connect My Sql:'.mysql_error());
-$rs=mysqli_query($conn,"select * from student WHERE `matric no`='$matnum'");
+$rs=mysqli_query($conn,"select * from student WHERE `matric_no`='$matnum'");
 $qs =mysqli_query($conn,"select * from student WHERE `phone`='$phone'");
 
 if (mysqli_num_rows($rs)>0 || mysqli_num_rows($qs)>0)
@@ -124,13 +136,13 @@ if (mysqli_num_rows($rs)>0 || mysqli_num_rows($qs)>0)
             <input name="phone" class="form-control" selected="234" placeholder="234XXXXXXXXXX" required="required" maxlength="13" type="tel" id="UserPhoneNumber" value="">
             </div>
 
-                    <div class="form-group">
+                    <!-- <div class="form-group">
             <input name="password" class="form-control" required="required" placeholder="Password" minlength="8" maxlength="200" type="password" id="UserChangePassword" value="">
             <div class="form-hint">Password must be at least 8 characters long.</div>
-          </div>
-                    <div class="form-group required">
+          </div> -->
+                    <!-- <div class="form-group required">
             <input name="confirm_password" class="form-control" placeholder="Repeat password" minlength="8" maxlength="200" type="password" id="UserRepeatPassword" required="required" value="">
-          </div>
+          </div> -->
              
           <div class="clearfix"></div>
     
@@ -164,8 +176,8 @@ if (mysqli_num_rows($rs)>0 || mysqli_num_rows($qs)>0)
     
 } else{
 
-$query="INSERT INTO `student`(`email`,`first name`,`last name`,`matric no`,`department`,`level`,`phone`,`password`) 
-VALUES('$email','$fname','$lname','$matnum','$dept','$lev','$phone','$password')";
+$query="INSERT INTO `student`(`email`,`firstname`,`lastname`,`matric_no`,`department`,`level`,`phone`) 
+VALUES('$email','$fname','$lname','$matnum','$dept','$lev','$phone')";
 mysqli_query($conn,$query) or die("Could Not Perform the Query");
 session_start();
 $_SESSION['login'] = 'student';

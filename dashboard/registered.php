@@ -30,7 +30,7 @@ $phone = "PHONE NUMBER";
 echo "<table>"; // start a table tag in the HTML
 echo "<tr><th>".$email. "&#9;</th><th>".$fname. "&#9;</th><th>".$lname. "&#9;</th><th>".$matnum. "&#9;</th><th>".$dept. "&#9;</th><th>".$level. "&#9;</th><th>".$phone. "&#9;</th>";
 while($row = mysqli_fetch_array($result)){   //Creates a loop to loop through results
-echo "<tr><td>" . $row['email'] . "&#9;</td><td>".$row['first name'] . "&#9;</td><td>" . $row['last name'] ."&#9;</td><td>" . $row['matric no'] . "&#9;</td><td>" . $row['department'] . "&#9;</td><td>" . $row['level'] . "&#9;</td><td>" . $row['phone'] . "&#9;</td></tr>";  //$row['index'] the index here is a field name
+echo "<tr><td>" . $row['email'] . "&#9;</td><td>".$row['firstname'] . "&#9;</td><td>" . $row['lastname'] ."&#9;</td><td>" . $row['matric_no'] . "&#9;</td><td>" . $row['department'] . "&#9;</td><td>" . $row['level'] . "&#9;</td><td>" . $row['phone'] . "&#9;</td></tr>";  //$row['index'] the index here is a field name
 }
 
 echo "</table>"; 
