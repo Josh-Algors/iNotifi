@@ -135,22 +135,6 @@
 
 <script type="text/javascript">
    
-
-    var password = document.getElementById("UserChangePassword");
-    var confirmpassword = document.getElementById("UserRepeatPassword");
-
-function validatePassword(){
-    if(password.value != confirmpassword.value){
-      confirmpassword.setCustomValidity("Passwords don't match");
-    } else {
-      confirmpassword.setCustomValidity('');
-
-    }
-}
-    password.onchange = validatePassword;
-    confirmpassword.onkeyup = validatePassword;
-
-
      document.getElementById("signUpButton").disabled = false;
     function enableBtn(){
       document.getElementById("signUpButton").disabled = false;
