@@ -188,13 +188,13 @@ if (isset($_POST['sendnote'])) {
     if($_SERVER['APP_ENV'] == 'local')
     {
       $svgPath = "/opt/homebrew/bin/inkscape";
-      $command = $svgPath . ' --export-type=png --export-filename=' . $pngFilename . ' ' . $svgFilename;
+      $command = $svgPath . ' --export-type=png --export-filename=' . $pngFilename . ' --export-dpi=600 ' . $svgFilename ;
       exec($command, $output, $returnCode);
     }
     else
     {
       $svgPath = "/usr/bin/inkscape";
-      $command = $svgPath . ' --export-png=' . $pngFilename . ' ' . $svgFilename;
+      $command = $svgPath . ' --export-png=' . $pngFilename . ' --export-dpi=600 ' . $svgFilename;
       exec($command, $output, $returnCode);
     }
     
