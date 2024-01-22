@@ -219,16 +219,23 @@ if (isset($_POST['sendnote'])) {
             " minutes\nDepartment: " . $_POST['dept'] . "\nLevel: " . $_POST['lev'] . "\nExamination Seat: " . $curseat;
 
         // Fetch phone number from the student table
-        // $phoneQuery = mysqli_query($conn, "SELECT `phone` FROM `student` WHERE `matric no` = '$student_id'");
-        // $phoneRow = mysqli_fetch_array($phoneQuery);
-        // $phoneNumber = "+" . $phoneRow['phone'];
+        $phoneQuery = mysqli_query($conn, "SELECT `phone` FROM `student` WHERE `id` = '$student_id'");
+        $phoneRow = mysqli_fetch_array($phoneQuery);
+        $phoneNumber = "+" . $phoneRow['phone'];
 
         // // Send SMS using Twilio
-        // $account_sid = 'AC039121e48fa58c46c42f3f97ea5bb80c';
-        // $auth_token = 'ee0460591e3ed7d65746dcd9badcc0e3';
-        // $twilio_number = "+12065043061";
+        // $account_sid = 'ACc8dc4617e2231412a7e4eaeb355608aa';
+        // $auth_token = 'a2a95f8be993c1e527e8ed4f1ffb1374';
+        // $twilio_number = "+2349053219099";
 
         // $client = new Client($account_sid, $auth_token);
+
+        // $validation_request = $client->validationRequests
+        //                      ->create("+2349053219099", // phoneNumber
+        //                               ["friendlyName" => "My Home Phone Number"]
+        //                      );
+        // exit;
+
         // $client->messages->create(
         //     $phoneNumber,
         //     array(
