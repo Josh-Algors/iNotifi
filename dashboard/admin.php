@@ -495,7 +495,7 @@ if(isset($_POST['sendmessage'])){
 	            </div>
               <div class="form-group required">
             <select name="dept" class="form-control" id="pet-select" required>
-              <option value="">--Choose Your Department--</option>
+              <option value="">--Choose Department--</option>
               <option value="Computer Technology">Computer Technology</option>
               <option value="Food Technology">Food Technology</option>
               <option value="Polymer & Textile">Polymer & Textile</option>
@@ -506,7 +506,7 @@ if(isset($_POST['sendmessage'])){
           </div>
           <div class="form-group required">
             <select name="lev" class="form-control" id="pet-select" required>
-              <option value="">--Choose Your Level--</option>
+              <option value="">--Choose Level--</option>
               <option value="nd1">ND1</option>
               <option value="nd2">ND2</option>
               <option value="hnd1">HND1</option>
@@ -524,13 +524,17 @@ if(isset($_POST['sendmessage'])){
 	            </div>
 
               <div class="form-group required">
-                    
-	            	<input name="duration" class="form-control" placeholder="Exam Duration" type="text" id="duration" required="required">
-	            </div>
+            <select name="duration" class="form-control" id="duration" required>
+              <option value="">--Select Exam Duration--</option>
+              <option value="1 Hour">1 Hour</option>
+              <option value="2 Hour">2 Hours</option>
+              <option value="3 Hour">3 Hours</option>
+              <option value="4 Hour">4 Hours</option>
+            </select>
 
               <div class="form-group required">
               <select name="venue" class="form-control" id="venue" required>
-              <option value="">--Choose Your Department--</option>
+              <option value="">--Choose Exam Venue--</option>
               <option value="Multipurpose Hall">Multipurpose Hall</option>
               <option value="New Building Room 3">New Building Room 3</option>
               <option value="New Building Room 4">New Building Room 4</option>
