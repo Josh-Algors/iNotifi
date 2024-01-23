@@ -531,7 +531,7 @@ if(isset($_POST['sendmessage'])){
               <option value="3 Hour">3 Hours</option>
               <option value="4 Hour">4 Hours</option>
             </select>
-
+</div>
               <div class="form-group required">
               <select name="venue" class="form-control" id="venue" required>
               <option value="">--Choose Exam Venue--</option>
