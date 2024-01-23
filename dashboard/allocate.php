@@ -27,7 +27,7 @@ if(isset($_POST["btnsubmit"]))
         $row = mysqli_fetch_assoc($fs);
         $reference = $_GET['reference'];
 
-        $rs = mysqli_query($conn,"select exam.id as ids from exam, student where student.matric_no='$matric_no' and exam.reference='$reference'");
+        $rs = mysqli_query($conn,"select exam.id as ids from exam, student where student.id=exam.student_id and student.matric_no='$matric_no' and exam.reference='$reference'");
         if(mysqli_num_rows($rs) < 1 )
         {
             echo '<script>alert("No Exam Info found!")</script>';
