@@ -295,7 +295,7 @@ if (isset($_POST['sendnote'])) {
     }
 
     echo '<script>alert("Info Sent!")</script>';
-    header("location: qr_code.php?img=" . $reference);
+    header("location: qr_code.php?img=" . $uniqueFileName);
     exit;
 }
 
