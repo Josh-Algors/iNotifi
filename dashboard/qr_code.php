@@ -14,7 +14,14 @@ else
 
 if (isset($_GET['img']) && !empty($_GET['img'])) {
 
-  $qrCodePath = "../output_image_" . $_GET['img'] . ".png";
+  if($_SERVER['APP_ENV'] == 'local')
+    {
+      $qrCodePath = "../output_image_" . $_GET['img'] . ".png";
+    }
+    else
+    {
+      $qrCodePath = $_SERVER['LIVE_URL'] . "/output_image_" . $_GET['img'] . ".png";
+    }
 
 ?>
 
