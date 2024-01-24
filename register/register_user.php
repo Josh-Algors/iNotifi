@@ -22,7 +22,7 @@ if(!empty($_POST['email'])) {
 $rs=mysqli_query($conn,"select * from student WHERE `matric_no`='$matnum'");
 $qs =mysqli_query($conn,"select * from student WHERE `phone`='$phone'");
 
-if (mysqli_num_rows($rs)>0 || mysqli_num_rows($qs)>0)
+if (mysqli_num_rows($rs) > 0 || mysqli_num_rows($qs) > 0)
 {
 ?>
 <!DOCTYPE html>
@@ -49,15 +49,15 @@ if (mysqli_num_rows($rs)>0 || mysqli_num_rows($qs)>0)
     
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap_1680.min.css">
-    <link rel="stylesheet" type="text/css" href="css/style_front_1680.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap_1680.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/style_front_1680.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
 
-    <script type="text/javascript" async="" src="js/_Incapsula_Resource.js"></script>
-    <script async="" src="js/analytics.js"></script>
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/svg4everybody.legacy.min.js"></script>
+    <script type="text/javascript" async="" src="../js/_Incapsula_Resource.js"></script>
+    <script async="" src="../js/analytics.js"></script>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/svg4everybody.legacy.min.js"></script>
 
     <!-- Open graph -->
     <meta property="og:type" content="website">
